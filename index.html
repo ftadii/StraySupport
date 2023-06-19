@@ -38,6 +38,26 @@
     .lightgrey {
       color: #454b55;
     }
+
+    .flip {
+      transform: rotate(180deg);
+    }
+
+    .spacer {
+      aspect-ratio: 900/200;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .peak1 {
+      background-image: url("./peak1.svg");
+    }
+
+    .peak2 {
+      background-image: url("./peak2.svg");
+    }
   </style>
 
   <link id="theme-style" rel="stylesheet" href="light-theme.css">
@@ -103,7 +123,8 @@
               <p lang="en" dir="ltr">There is no easy answer to Malaysia&#39;s burgeoning stray animal population, but
                 experts say neutering the animals is one step to controlling the population. <a
                   href="https://twitter.com/hashtag/ItsAboutYOUth?src=hash&amp;ref_src=twsrc%5Etfw">#ItsAboutYOUth</a>
-                <a href="https://t.co/d5hVQHJpYk">pic.twitter.com/d5hVQHJpYk</a></p>&mdash; Astro AWANI (@501Awani) <a
+                <a href="https://t.co/d5hVQHJpYk">pic.twitter.com/d5hVQHJpYk</a>
+              </p>&mdash; Astro AWANI (@501Awani) <a
                 href="https://twitter.com/501Awani/status/1644525417125249024?ref_src=twsrc%5Etfw">April 8, 2023</a>
             </blockquote>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -120,15 +141,8 @@
   <center>
     <div class="block"></div>
 
-    <div id="map" class="center"></div>
+    
 
-    <!--<div class="modal">
-          <div class="modal-background"></div>
-          <div class="modal-content">
-            
-          </div>
-          <button class="modal-close is-large" aria-label="close"></button>
-        </div> -->
     <div id="map">
       <script src="leaflet.js"></script>
     </div>
