@@ -1,4 +1,4 @@
-var map = L.map('map').setView([4.19303, 101.99707], 20);
+var map = L.map('map').setView([4.19303, 101.99707], 5);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
