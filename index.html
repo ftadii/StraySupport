@@ -26,8 +26,8 @@
       text-align: center;
     }
 
-    .map { 
-    height: 180px; 
+    .map {
+      height: 180px;
     }
   </style>
 
@@ -43,7 +43,7 @@
 
   <script src="./leaflet.js"></script>
 
-  
+
 </head>
 
 <body style="background-color: #a3ebff" id="center">
@@ -157,7 +157,14 @@
 
   <div id="map">
 
-    <script src="./leaflet.js"></script>
+    <script>
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+
+    </script>
 
   </div>
   <br>
