@@ -1,188 +1,211 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <meta name="description" content="This website is an assigment for Adi." />
 
-  <meta name="description" content="This website is an assigment for Adi." />
+    <title>StraySupport</title>
+    <link rel="icon" href="./icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+      integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <title>StraySupport</title>
-  <link rel="icon" href="./icon.png" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
-    integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .center {
+        align-items: center;
+      }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    .center {
-      align-items: center;
-    }
+      .footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50%;
+        background-color: rgb(0, 209, 178);
+        color: white;
+        text-align: center;
+      }
 
-    .footer {
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 50%;
-      background-color: rgb(0, 209, 178);
-      color: white;
-      text-align: center;
-    }
+      #map {
+        height: 600px;
+        width: 100%;
+      }
 
-    #map {
-      height: 600px;
-      width: 100%;
-    }
+      .lightgrey {
+        color: #454b55;
+      }
 
-    .lightgrey {
-      color: #454b55;
-    }
+      .flip {
+        transform: rotate(180deg);
+      }
 
-    .flip {
-      transform: rotate(180deg);
-    }
+      .spacer {
+        aspect-ratio: 900/50;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
 
-    .spacer {
-      aspect-ratio: 900/50;
-      width: 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
+      .opacity80 {
+        opacity: 80%;
+      }
 
-    .opacity80 {
-      opacity: 80%;
-    }
+      .peak1 {
+        background-image: url("./peak3.svg");
+      }
 
-    .peak1 {
-      background-image: url("./peak3.svg");
-    }
+      .peak2 {
+        background-image: url("./peak4.svg");
+      }
+    </style>
 
-    .peak2 {
-      background-image: url("./peak4.svg");
-    }
-  </style>
+    <link id="theme-style" rel="stylesheet" href="light-theme.css" />
 
-  <link id="theme-style" rel="stylesheet" href="light-theme.css">
+    <script src="./script.js"></script>
 
-  <script src="./script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-</head>
+  <body style="background-color: #202731" id="center">
+    <!-- Ni section paling atas -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <center>
+          <figure class="image is-64x64">
+            <img
+              class="is-rounded"
+              src="https://pbs.twimg.com/profile_images/1402646080567713792/A4-OX1TW_400x400.jpg"
+            />
+          </figure>
+          <br />
+          <p class="title">StraySupport</p>
+        </center>
+      </div>
+    </section>
 
-<body style="background-color: #202731" id="center">
+    <br />
 
-  <!-- Ni section paling atas -->
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <center>
-        <figure class="image is-64x64">
-          <img class="is-rounded" src="https://pbs.twimg.com/profile_images/1402646080567713792/A4-OX1TW_400x400.jpg">
-        </figure>
-        <br>
-        <p class="title">StraySupport</p>
-      </center>
-    </div>
-  </section>
-
-  <br>
-
-  <div class="box is-grey-light">
-
-    <div class="tile is-ancestor is-grey-light">
-      <div class="tile is-vertical is-8 is-grey-light">
-        <div class="tile is-grey-light">
-          <div class="tile is-parent">
-            <article class="tile is-child notification is-dark">
-              <columns>
-                <center>
-                  <p class="title">StraySupport's Target</p>
-                </center>
-                <div class="column">
-                  <div class="card">
-                    <div class="card-image">
-
+    <div class="box is-grey-light">
+      <div class="tile is-ancestor is-grey-light">
+        <div class="tile is-vertical is-8 is-grey-light">
+          <div class="tile is-grey-light">
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-dark">
+                <columns>
+                  <center>
+                    <p class="title">StraySupport's Target</p>
+                  </center>
+                  <div class="column">
+                    <div class="card">
+                      <div class="card-image"></div>
                     </div>
+                    <br />
+                    <p class="subtitle">
+                      We dedicated our website to help the everyday heroes that
+                      volunteered themself for the well being of stray animals
+                    </p>
                   </div>
-                  <br>
-                  <p class=" subtitle">We dedicated our website to help the everyday heroes that volunteered themself
-                    for the
-                    well being of stray animals</p>
-                </div>
-              </columns>
-            </article>
+                </columns>
+              </article>
+            </div>
           </div>
         </div>
-
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-dark">
-          <div class="content">
-            <blockquote class="twitter-tweet" data-lang="en" data-theme="dark">
-              <p lang="en" dir="ltr">There is no easy answer to Malaysia&#39;s burgeoning stray animal population, but
-                experts say neutering the animals is one step to controlling the population. <a
-                  href="https://twitter.com/hashtag/ItsAboutYOUth?src=hash&amp;ref_src=twsrc%5Etfw">#ItsAboutYOUth</a>
-                <a href="https://t.co/d5hVQHJpYk">pic.twitter.com/d5hVQHJpYk</a>
-              </p>&mdash; Astro AWANI (@501Awani) <a
-                href="https://twitter.com/501Awani/status/1644525417125249024?ref_src=twsrc%5Etfw">April 8, 2023</a>
-            </blockquote>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-        </article>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-dark">
+            <div class="content">
+              <blockquote
+                class="twitter-tweet"
+                data-lang="en"
+                data-theme="dark"
+              >
+                <p lang="en" dir="ltr">
+                  There is no easy answer to Malaysia&#39;s burgeoning stray
+                  animal population, but experts say neutering the animals is
+                  one step to controlling the population.
+                  <a
+                    href="https://twitter.com/hashtag/ItsAboutYOUth?src=hash&amp;ref_src=twsrc%5Etfw"
+                    >#ItsAboutYOUth</a
+                  >
+                  <a href="https://t.co/d5hVQHJpYk"
+                    >pic.twitter.com/d5hVQHJpYk</a
+                  >
+                </p>
+                &mdash; Astro AWANI (@501Awani)
+                <a
+                  href="https://twitter.com/501Awani/status/1644525417125249024?ref_src=twsrc%5Etfw"
+                  >April 8, 2023</a
+                >
+              </blockquote>
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"
+              ></script>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
-  </div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
-  <center>
+    <center>
+      <div class="spacer peak1"></div>
 
-    <div class="spacer peak1"></div>
-    
-    <section>
-    <div id="map">
-      <script src="leaflet.js"></script>
-    </div>
-  </section>
+      <section>
+        <div id="map">
+          <script src="leaflet.js"></script>
+        </div>
+      </section>
 
-  <div class="spacer peak2 flip"></div>
+      <div class="spacer peak2 flip"></div>
+    </center>
 
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
-  </center>
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-
-  <footer class="footer footer-is-light">
-    <div class="content has-text-centered">
-      <p>
-        <strong>StraySupport</strong> by Atlas. This is our project for Young Innovators Challange 2023 <a
-          href="https://younginnovators.my/">(Yic)</a>.
-      </p>
-
-  </footer>
-
-</body>
-
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>StraySupport</strong> by Atlas. This is our project for Young
+          Innovators Challange 2023
+          <a href="https://younginnovators.my/">(Yic)</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
