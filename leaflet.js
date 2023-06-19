@@ -4,7 +4,7 @@ var marker = L.marker([4.19303, 101.99707]).addTo(map);
 marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 
 var popup = L.popup()
-    .setLatLng([51.513, -0.09])
+    .setLatLng([10.19303, 120.99707])
     .setContent("I am a standalone popup.")
     .openOn(map);
 
