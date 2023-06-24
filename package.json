@@ -1,0 +1,11 @@
+{
+  "name": "straysupport",
+  "version": "1.0.0",
+  "description": "An application solely built for the purpose of reducing the amounts of stray animals on the street.",
+  "main": "addlisting.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Unlicense"
+}
