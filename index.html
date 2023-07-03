@@ -1,250 +1,212 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Atlas's submission for the 2023 Young Innovator Challlange" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>StraySupport</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Atlas's submission for the 2023 Young Innovator Challlange" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" href="./icon.png" />
+  <title>StraySupport</title>
 
-    <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="./icon.png" />
 
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
     integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-    />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap"
-    rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet" />
 
 
-    <style>
-      body {
-        margin: 0;
-        font-family: "rubik", sans-serif;
-        background: #202731;
-        overflow-x: hidden;
-      }
+  <style>
+    body {
+      margin: 0;
+      font-family: "rubik", sans-serif;
+      background: #202731;
+      overflow-x: hidden;
+    }
 
-      .center {
-        align-items: center;
-      }
+    .center {
+      align-items: center;
+    }
 
-      #map {
-        height: 500px;
-        width: 100%;
-      }
+    #map {
+      height: 500px;
+      width: 100%;
+    }
 
-      .lightgrey {
-        color: #454b55;
-      }
+    .lightgrey {
+      color: #454b55;
+    }
 
-      .flip {
-        transform: rotate(180deg);
-      }
+    .flip {
+      transform: rotate(180deg);
+    }
 
-      .spacer {
-        aspect-ratio: 900/50;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
+    .spacer {
+      aspect-ratio: 900/50;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
 
-      .opacity80 {
-        opacity: 80%;
-      }
+    .opacity80 {
+      opacity: 80%;
+    }
 
-      .peak1 {
-        background-image: url("./peak1.svg");
-      }
+    .peak1 {
+      background-image: url("./peak1.svg");
+    }
 
-      .peak2 {
-        background-image: url("./peak2.svg");
-      }
+    .peak2 {
+      background-image: url("./peak2.svg");
+    }
 
-      .header {
-        background-image: url("./header.svg");
-      }
+    .header {
+      background-image: url("./header.svg");
+    }
 
-      .light {
-        background-color: #f5f5f5;
-      }
-    </style>
+    .light {
+      background-color: #f5f5f5;
+    }
+  </style>
 
-    <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""
-    />
-    
-    <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    
-    <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin="">
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
     </script>
-    
-    <script src="./arrowicon.css"></script>
-    <script src="./arrowicon.js"></script>
 
-  </head>
+  <link rel="stylesheet" src="./arrowicon.css>
 
-  <body style="background-color: #202731" id="center">
-    <!-- Ni section paling atas -->
-    <section class="light">
-      <div class="hero-body">
-        <center>
-          <figure class="image is-64x64">
-            <img
-              class="is-rounded"
-              src="./icon.png"
-            />
-          </figure>
-          <br />
-          <p class="title is-strong-weight">StraySupport</p>
-          <div class="arrowicon">
-            <div class="arrow"></div>
-          </div>
-        </center>
-      </div>
-    </section>
-    <div class="spacer header flip"></div>
+</head>
 
-    <br />
-    <br />
-    <br />
+<body style="background-color: #202731" id="center">
+  <!-- Ni section paling atas -->
+  <section class="light">
+    <div class="hero-body">
+      <center>
+        <figure class="image is-64x64">
+          <img class="is-rounded" src="./icon.png" />
+        </figure>
+        <br />
+        <p class="title is-strong-weight">StraySupport</p>
+        <div class="arrowicon">
+          <div class="arrow"></div>
+        </div>
+      </center>
+    </div>
+  </section>
+  <div class="spacer header flip"></div>
 
-    <div class="box is-grey-light">
-      <div class="tile is-ancestor is-grey-light">
-        <div class="tile is-vertical is-8 is-grey-light">
-          <div class="tile is-grey-light">
-            <div class="tile is-parent">
-              <article class="tile is-child notification is-dark">
-                <columns>
-                  <center>
-                    <p class="title">StraySupport's Target</p>
-                  </center>
-                  <div class="column">
-                    <div class="card">
-                      <div class="card-image"></div>
-                    </div>
-                    <br />
-                    <p class="subtitle">
-                      We dedicated our website to help the everyday heroes that
-                      volunteered themself for the well being of stray animals
-                    </p>
+  <br />
+  <br />
+  <br />
+
+  <div class="box is-grey-light">
+    <div class="tile is-ancestor is-grey-light">
+      <div class="tile is-vertical is-8 is-grey-light">
+        <div class="tile is-grey-light">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-dark">
+              <columns>
+                <center>
+                  <p class="title">StraySupport's Target</p>
+                </center>
+                <div class="column">
+                  <div class="card">
+                    <div class="card-image"></div>
                   </div>
-                </columns>
-              </article>
-            </div>
+                  <br />
+                  <p class="subtitle">
+                    We dedicated our website to help the everyday heroes that
+                    volunteered themself for the well being of stray animals
+                  </p>
+                </div>
+              </columns>
+            </article>
           </div>
         </div>
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-dark">
-            <div class="content">
-              <blockquote
-                class="twitter-tweet"
-                data-lang="en"
-                data-theme="dark"
-              >
-                <p lang="en" dir="ltr">
-                  There is no easy answer to Malaysia&#39;s burgeoning stray
-                  animal population, but experts say neutering the animals is
-                  one step to controlling the population.
-                  <a
-                    href="https://twitter.com/hashtag/ItsAboutYOUth?src=hash&amp;ref_src=twsrc%5Etfw"
-                    >#ItsAboutYOUth</a
-                  >
-                  <a href="https://t.co/d5hVQHJpYk"
-                    >pic.twitter.com/d5hVQHJpYk</a
-                  >
-                </p>
-                &mdash; Astro AWANI (@501Awani)
-                <a
-                  href="https://twitter.com/501Awani/status/1644525417125249024?ref_src=twsrc%5Etfw"
-                  >April 8, 2023</a
-                >
-              </blockquote>
-              <script
-                async
-                src="https://platform.twitter.com/widgets.js"
-                charset="utf-8"
-              ></script>
-            </div>
-          </article>
-        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-dark">
+          <div class="content">
+            <blockquote class="twitter-tweet" data-lang="en" data-theme="dark">
+              <p lang="en" dir="ltr">
+                There is no easy answer to Malaysia&#39;s burgeoning stray
+                animal population, but experts say neutering the animals is
+                one step to controlling the population.
+                <a href="https://twitter.com/hashtag/ItsAboutYOUth?src=hash&amp;ref_src=twsrc%5Etfw">#ItsAboutYOUth</a>
+                <a href="https://t.co/d5hVQHJpYk">pic.twitter.com/d5hVQHJpYk</a>
+              </p>
+              &mdash; Astro AWANI (@501Awani)
+              <a href="https://twitter.com/501Awani/status/1644525417125249024?ref_src=twsrc%5Etfw">April 8, 2023</a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </article>
       </div>
     </div>
+  </div>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
 
-    <center>
-      <button
-        class="button is-light"
-        class="js-modal-trigger"
-        data-target="addlisting"
-      >
-        Add a listing
-      </button>
-    </center>
+  <center>
+    <button class="button is-light" class="js-modal-trigger" data-target="addlisting">
+      Add a listing
+    </button>
+  </center>
 
-    <br />
-    <br />
+  <br />
+  <br />
 
-    <center>
-      <div class="spacer peak1"></div>
+  <center>
+    <div class="spacer peak1"></div>
 
-      <section>
-        <div id="map">
-          <script src="leaflet.js"></script>
-        </div>
-      </section>
+    <section>
+      <div id="map">
+        <script src="leaflet.js"></script>
+      </div>
+    </section>
 
-      <div class="spacer peak2 flip"></div>
-    </center>
+    <div class="spacer peak2 flip"></div>
+  </center>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <footer>
-      <div class="footer-content">
-        <h3>StraySupport</h3>
-        <p>An application created for stray animal's welfare</p>
-        <sub>
-          by <a href=""><i>Atlas</i></a>
-        </sub>
-        <!--<ul class="socials">
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <footer>
+    <div class="footer-content">
+      <h3>StraySupport</h3>
+      <p>An application created for stray animal's welfare</p>
+      <sub>
+        by <a href=""><i>Atlas</i></a>
+      </sub>
+      <!--<ul class="socials">
           <li>
             <a href="#"><i class="fa fa-facebook"></i></a>
           </li>
@@ -261,76 +223,78 @@
             <a href="#"><i class="fa fa-linkedin-square"></i></a>
           </li>
         </ul>-->
-      </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!--HTML addlisting snippet-->
-    <script src="./addlisting.js"></script>
+  <!--HTML addlisting snippet-->
+  <script src="./addlisting.js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Functions to open and close a modal
-        function openModal($el) {
-          $el.classList.add("is-active");
-        }
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Functions to open and close a modal
+      function openModal($el) {
+        $el.classList.add("is-active");
+      }
 
-        function closeModal($el) {
-          $el.classList.remove("is-active");
-        }
+      function closeModal($el) {
+        $el.classList.remove("is-active");
+      }
 
-        function closeAllModals() {
-          (document.querySelectorAll(".modal") || []).forEach(($modal) => {
-            closeModal($modal);
-          });
-        }
-
-        // Add a click event on buttons to open a specific modal
-        (document.querySelectorAll(".js-modal-trigger") || []).forEach(
-          ($trigger) => {
-            const modal = $trigger.dataset.target;
-            const $target = document.getElementById(modal);
-
-            $trigger.addEventListener("click", () => {
-              openModal($target);
-            });
-          }
-        );
-
-        // Add a click event on various child elements to close the parent modal
-        (
-          document.querySelectorAll(
-            ".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button"
-          ) || []
-        ).forEach(($close) => {
-          const $target = $close.closest(".modal");
-
-          $close.addEventListener("click", () => {
-            closeModal($target);
-          });
+      function closeAllModals() {
+        (document.querySelectorAll(".modal") || []).forEach(($modal) => {
+          closeModal($modal);
         });
+      }
 
-        // Add a keyboard event to close all modals
-        document.addEventListener("keydown", (event) => {
-          const e = event || window.event;
+      // Add a click event on buttons to open a specific modal
+      (document.querySelectorAll(".js-modal-trigger") || []).forEach(
+        ($trigger) => {
+          const modal = $trigger.dataset.target;
+          const $target = document.getElementById(modal);
 
-          if (e.keyCode === 27) {
-            // Escape key
-            closeAllModals();
-          }
+          $trigger.addEventListener("click", () => {
+            openModal($target);
+          });
+        }
+      );
+
+      // Add a click event on various child elements to close the parent modal
+      (
+        document.querySelectorAll(
+          ".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button"
+        ) || []
+      ).forEach(($close) => {
+        const $target = $close.closest(".modal");
+
+        $close.addEventListener("click", () => {
+          closeModal($target);
         });
       });
-    </script>
 
-    <div id="addlisting" class="modal">
-      <div class="modal-background"></div>
+      // Add a keyboard event to close all modals
+      document.addEventListener("keydown", (event) => {
+        const e = event || window.event;
 
-      <div class="modal-content">
-        <div class="box">
-          <p>Modal JS example</p>
-        </div>
+        if (e.keyCode === 27) {
+          // Escape key
+          closeAllModals();
+        }
+      });
+    });
+  </script>
+
+  <div id="addlisting" class="modal">
+    <div class="modal-background"></div>
+
+    <div class="modal-content">
+      <div class="box">
+        <p>Modal JS example</p>
       </div>
-
-      <button class="modal-close is-large" aria-label="close"></button>
     </div>
-  </body>
+
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+  <script src="./arrowicon.js"></script>
+</body>
+
 </html>
