@@ -20,21 +20,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  
+
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet" />
-  
+
   <link rel="stylesheet" href="style.css" />
-  
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
-  </script>
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+    </script>
 
-  
+
   <style>
     body {
       margin: 0;
@@ -89,7 +89,6 @@
     .light {
       background-color: #f5f5f5;
     }
-
   </style>
 
 
@@ -119,8 +118,25 @@
   <br />
   <br />
 
-  
- 
+  <div class="notification">
+    <button class="delete"></button>
+    Lorem ipsum
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+        const $notification = $delete.parentNode;
+
+        $delete.addEventListener('click', () => {
+          $notification.parentNode.removeChild($notification);
+        });
+      });
+    });
+  </script>
+
+  <br />
+  <br />
 
   <center>
     <button class="button is-light" class="js-modal-trigger" data-target="addlisting">
@@ -128,8 +144,8 @@
     </button>
 
 
-  <br />
-  <br />
+    <br />
+    <br />
 
 
     <div class="spacer peak1"></div>
@@ -140,7 +156,7 @@
       </div>
     </section>
     <div class="spacer peak2 flip"></div>
-    
+
     <br /> <br /><br /><br /><br /><br /><br />
 
 
@@ -162,21 +178,24 @@
                     <br />
                     <p class="subtitle">
                       The primary aim of our website is to aid individuals who have selflessly volunteered themselves to
-                      help stray animals. We believe that these everyday heroes deserve recognition and support for their
+                      help stray animals. We believe that these everyday heroes deserve recognition and support for
+                      their
                       noble acts.<br><br>
-  
-  
+
+
                       Our website serves as a platform for these volunteers to share their stories and experiences with
                       others. We encourage them to use our website as a tool to connect with other like-minded
-                      individuals, exchange tips and resources, and seek guidance on how to better care for stray animals.
+                      individuals, exchange tips and resources, and seek guidance on how to better care for stray
+                      animals.
                       <br><br>
-  
+
                       In addition to serving as a community for volunteers, our website also provides information on
                       animal welfare laws, veterinary care, and training resources for those interested in becoming a
-                      volunteer themselves. We strive to make our website a one-stop-shop for all things related to stray
+                      volunteer themselves. We strive to make our website a one-stop-shop for all things related to
+                      stray
                       animal welfare.
                       <br><br>
-  
+
                       Overall, our dedication to supporting everyday heroes who volunteer their time and effort to help
                       stray animals is the driving force behind our website. We hope to create a community that will
                       inspire others to join in this noble cause and make a positive impact on the lives of animals in
@@ -207,7 +226,7 @@
         </div>
       </div>
     </div>
-    
+
   </center>
 
   <br />
@@ -317,6 +336,6 @@
     <button class="modal-close is-large" aria-label="close"></button>
   </div>
   <script src="./arrowicon.js"></script>
-  </body>
+</body>
 
 </html>
